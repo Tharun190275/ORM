@@ -1,12 +1,8 @@
 # Ex01 Django ORM Web Application
-## Date: 
+
 
 ## AIM
-To develop a Django application to manage an online food delivery platform like Zomato/Swiggy using Object Relational Mapping (ORM).
-
-## ENTITY RELATIONSHIP DIAGRAM
-
-
+To develop a Django application to store and retrieve data from Car Inventory Database using Object Relational Mapping(ORM).
 
 ## DESIGN STEPS
 
@@ -23,13 +19,32 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 ## PROGRAM
+# admin.py
+```
+from django.contrib import admin
+from . models import Car
+# Register your models here.
 
+admin.site.register(Car)
 
+class CarAdmin(admin.ModelAdmin):
+    list_display = ('car_id','brand','model','year','price')
+```
+# models.py
+```
+from django.db import models
+
+# Create your models here.
+class Car(models.Model):
+    car_id = models.IntegerField(primary_key=True)
+    brand = models.CharField(max_length=20)
+    model = models.CharField(max_length=20)
+    year = models.DateField()
+    price = models.IntegerField()
+```
 
 ## OUTPUT
-
-Include the screenshot of your admin page.
-
+<img width="1867" height="973" alt="image" src="https://github.com/user-attachments/assets/2475b7bb-c173-47bf-bb38-ca813763ac15" />
 
 ## RESULT
 Thus the program for creating a database using ORM hass been executed successfully
